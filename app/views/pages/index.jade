@@ -1,0 +1,13 @@
+extends ../layout
+block content
+	.container
+		.row
+			each item in movies
+				.col-md-2
+					.thmubnail
+						a(href="/movie/#{item._id}",style={'height':'180px','display':'block'})
+							img(src="#{item.poster}", alt="#{item.title}",style={'max-width':'180px','max-height':'180px'})
+
+						.caption(style={'margin-left':'38px'})
+							h3 #{item.title}
+							p: a.btn.btn-primary(href="/movie/#{item._id}", role="button") 观看预告片
